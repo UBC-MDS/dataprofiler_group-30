@@ -6,6 +6,8 @@ Dongchun Chen, Ismail (Husain) Bhinderwala, Jingyuan Wang
 
 The `dataprofiler` package simplifies data profiling by providing essential functions for comprehensive dataset exploration and quality checks. This package offers tools to generate detailed summaries, detect anomalies, and create intuitive visualizations, making it easier to uncover key patterns and insights in your data with minimal effort.
 
+- `summarize_data()`: Summarizes numeric columns in a given DataFrame by calculating key statistical metrics.This function gives an overview of key statistics of numeric columns. It returns a summary DataFrame containing the minimum, 25th percentile (Q1), median (50th percentile), 75th percentile (Q3), and maximum values for each numeric column.
+
 - `detect_anomalies()`: Detects anomalies in the dataset by identifying missing values, outliers, and duplicates. It calculates the percentage of missing data for each column, detects numerical outliers using the interquartile range (IQR) method, and identifies duplicate rows. This function helps in understanding and addressing potential data quality issues in the dataset.
 
 ## Installation
