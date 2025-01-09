@@ -4,7 +4,9 @@ Dongchun Chen, Ismail (Husain) Bhinderwala, Jingyuan Wang
 
 ## dataprofiler
 
-EDA
+The `dataprofiler` package simplifies data profiling by providing essential functions for comprehensive dataset exploration and quality checks. This package offers tools to generate detailed summaries, detect anomalies, and create intuitive visualizations, making it easier to uncover key patterns and insights in your data with minimal effort.
+
+- `detect_anomalies()`: Detects anomalies in the dataset by identifying missing values, outliers, and duplicates. It calculates the percentage of missing data for each column, detects numerical outliers using the interquartile range (IQR) method, and identifies duplicate rows. This function helps in understanding and addressing potential data quality issues in the dataset.
 
 ## Installation
 
