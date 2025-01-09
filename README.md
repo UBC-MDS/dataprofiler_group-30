@@ -1,4 +1,8 @@
-# dataprofiler
+## Contributors 
+
+Dongchun Chen, Ismail (Husain) Bhinderwala, Jingyuan Wang
+
+## dataprofiler
 
 EDA
 
