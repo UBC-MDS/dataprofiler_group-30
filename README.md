@@ -10,6 +10,10 @@ The `dataprofiler` package simplifies data profiling by providing essential func
 
 - `detect_anomalies()`: Detects anomalies in the dataset by identifying missing values, outliers, and duplicates. It calculates the percentage of missing data for each column, detects numerical outliers using the interquartile range (IQR) method, and identifies duplicate rows. This function helps in understanding and addressing potential data quality issues in the dataset.
 
+- `plotify()` : Makes it easy to visualize your DataFrame by automatically creating the right type of plots based on your data. It handles different column types—numeric, categorical, binary, or text—and generates appropriate visualizations like scatter plots for numeric data, box plots for numeric vs. categorical data, and bar charts for categorical data. For text columns, it even creates a word cloud to highlight key terms.
+
+This package provides tools for exploring and cleaning data by summarizing statistics, detecting anomalies, and creating visualizations. While other tools like `ydata-profiling` (https://docs.profiling.ydata.ai/latest/) offer similar functionalities and generate detailed reports, this package focuses on providing modular functions that can be easily integrated into custom workflows.
+
 ## Installation
 
 ```bash
@@ -26,7 +30,7 @@ Interested in contributing? Check out the contributing guidelines. Please note t
 
 ## License
 
-`dataprofiler` was created by DongchunChen. It is licensed under the terms of the MIT license.
+`dataprofiler` was created by DongchunChen, Ismail (Husain) Bhinderwala and Jingyuan Wang. It is licensed under the terms of the MIT license.
 
 ## Credits
 
