@@ -1,5 +1,8 @@
 import pandas as pd
 import numpy as np
+import altair as alt
+from wordcloud import WordCloud
+import matplotlib.pyplot as plt
 
 def summarize_data(df):
     """
@@ -154,4 +157,6 @@ def plotify(df):
     """
     if not isinstance(df, pd.DataFrame):
         raise TypeError("Input must be a pandas DataFrame.")
+    if df.empty:
+        raise ValueError("DataFrame is empty.")
     pass
