@@ -10,6 +10,7 @@ readme = "README.md"
 python = ">=3.9"
 matplotlib = ">=3.4.3"
 pandas = "^2.2.3"
+altair = "^5.5.0"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.3.4"
