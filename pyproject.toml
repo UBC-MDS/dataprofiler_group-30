@@ -2,12 +2,15 @@
 name = "dataprofiler"
 version = "0.1.0"
 description = "EDA"
-authors = ["DongchunChen"]
+authors = ["DongchunChen, Ismail (Husain) Bhinderwala, Jingyuan Wang"]
 license = "MIT"
 readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.9"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.4"
 
 [tool.semantic_release]
 version_toml = [
