@@ -23,11 +23,41 @@ def summarize_data(df):
         A DataFrame where each row corresponds to a numeric column in the input DataFrame,
         and the columns represent the calculated statistics: min, 25%, 50% (median), 75%, and max.
 
+	Raises
+    ------
+    TypeError
+        If the input is not a pandas DataFrame.
+    ValueError
+        If the DataFrame is empty or contains no numeric columns.
+
     Example
     -------
     >>> summarize_data(df)
     """
-    pass
+
+	# Check if input is a DataFrame
+    if not isinstance(df, pd.DataFrame):
+        raise TypeError("Input must be a pandas DataFrame.")
+
+    # Check if DataFrame is empty
+    if df.empty:
+        raise ValueError("The input DataFrame is empty.")
+
+    # Select numeric columns
+    numeric_cols = df.select_dtypes(include=['number'])
+
+    # Check if there are numeric columns
+    if numeric_cols.empty:
+        raise ValueError("The DataFrame contains no numeric columns.")
+
+    # Calculate summary statistics
+    summary = numeric_cols.describe(percentiles=[0.25, 0.5, 0.75]).T
+
+    # Select relevant statistics
+    summary = summary[['min', '25%', '50%', '75%', 'max']]
+
+    return summary
+
 	
 def detect_anomalies(df):
     """Detect anomalies in a dataframe, including missing values, outliers, and duplicates.

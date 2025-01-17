@@ -30,7 +30,7 @@ Interested in contributing? Check out the contributing guidelines. Please note t
 
 ## License
 
-`dataprofiler` was created by DongchunChen, Ismail (Husain) Bhinderwala and Jingyuan Wang. It is licensed under the terms of the MIT license.
+`dataprofiler` was created by Dongchun Chen, Ismail (Husain) Bhinderwala and Jingyuan Wang. It is licensed under the terms of the MIT license.
 
 ## Credits
 
