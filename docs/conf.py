@@ -6,7 +6,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = u"dataprofiler"
+project = u"datpro"
 copyright = u"2025, DongchunChen"
 author = u"DongchunChen"
 

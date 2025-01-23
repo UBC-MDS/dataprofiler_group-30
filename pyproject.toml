@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "dataprofiler"
+name = "datpro"
 version = "0.1.0"
 description = "EDA"
 authors = ["DongchunChen, Ismail (Husain) Bhinderwala, Jingyuan Wang"]
@@ -17,6 +17,10 @@ ipython = "^8.31.0"
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.3.4"
 pytest-cov = "^6.0.0"
+jupyter = "^1.1.1"
+myst-nb = "^1.1.2"
+sphinx-autoapi = "^3.4.0"
+sphinx-rtd-theme = "^3.0.2"
 
 [tool.semantic_release]
 version_toml = [
