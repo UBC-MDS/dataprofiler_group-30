@@ -2,9 +2,9 @@
 
 Dongchun Chen, Ismail (Husain) Bhinderwala, Jingyuan Wang
 
-## dataprofiler
+## datpro
 
-The `dataprofiler` package simplifies data profiling by providing essential functions for comprehensive dataset exploration and quality checks. This package offers tools to generate detailed summaries, detect anomalies, and create intuitive visualizations, making it easier to uncover key patterns and insights in your data with minimal effort.
+The `datpro` package simplifies data profiling by providing essential functions for comprehensive dataset exploration and quality checks. This package offers tools to generate detailed summaries, detect anomalies, and create intuitive visualizations, making it easier to uncover key patterns and insights in your data with minimal effort.
 
 - `summarize_data()`: Summarizes numeric columns in a given DataFrame by calculating key statistical metrics.This function gives an overview of key statistics of numeric columns. It returns a summary DataFrame containing the minimum, 25th percentile (Q1), median (50th percentile), 75th percentile (Q3), and maximum values for each numeric column.
 
@@ -17,7 +17,7 @@ This package provides tools for exploring and cleaning data by summarizing stati
 ## Installation
 
 ```bash
-$ pip install dataprofiler
+$ pip install datpro
 ```
 
 ## Usage

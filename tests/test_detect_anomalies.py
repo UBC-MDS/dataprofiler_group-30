@@ -1,6 +1,6 @@
 import pytest
 import pandas as pd
-from dataprofiler.dataprofiler import detect_anomalies
+from datpro.dataprofiler import detect_anomalies
 
 def test_missing_values():
     """Test if missing values are detected correctly."""
