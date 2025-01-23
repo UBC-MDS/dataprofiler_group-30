@@ -1,4 +1,4 @@
-from datpro.dataprofiler import plotify
+from datpro.datpro import plotify
 import pytest
 import pandas as pd 
 
