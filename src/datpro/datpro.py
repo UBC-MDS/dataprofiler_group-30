@@ -22,13 +22,6 @@ def summarize_data(df):
         A DataFrame where each row corresponds to a numeric column in the input DataFrame,
         and the columns represent the calculated statistics: min, 25%, 50% (median), 75%, and max.
 
-	Raises
-    ------
-    TypeError
-        If the input is not a pandas DataFrame.
-    ValueError
-        If the DataFrame is empty or contains no numeric columns.
-
     Example
     -------
     >>> summarize_data(df)
