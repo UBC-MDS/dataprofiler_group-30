@@ -1,5 +1,5 @@
 ## Contributors 
-
+[![Documentation Status](https://readthedocs.org/projects/datpro/badge/?version=latest)](https://datpro.readthedocs.io/en/latest/?badge=latest)
 Dongchun Chen, Ismail (Husain) Bhinderwala, Jingyuan Wang
 
 ## datpro
