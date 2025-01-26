@@ -47,7 +47,7 @@ print(anomalies)
 # Visualize data
 print("Generating visualizations...")
 dp.plotify(df, plot_types=['histogram', 'box', 'correlation'])
-'''
+```
 
 ## Contributing
 
