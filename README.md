@@ -22,7 +22,32 @@ $ pip install datpro
 
 ## Usage
 
-- TODO
+```python
+import pandas as pd
+import datpro as dp
+
+# Example DataFrame
+data = {
+    'age': [25, 30, 35, None, 40, 30, 35, 100],
+    'salary': [50000, 60000, 70000, 80000, 90000, None, 85000, 400000],
+    'department': ['HR', 'Finance', 'HR', 'IT', 'Finance', 'IT', 'HR', 'Finance']
+}
+df = pd.DataFrame(data)
+
+# Summarize numeric data
+summary = dp.summarize_data(df)
+print("Summary of numeric data:")
+print(summary)
+
+# Detect anomalies
+anomalies = dp.detect_anomalies(df)
+print("Anomaly detection report:")
+print(anomalies)
+
+# Visualize data
+print("Generating visualizations...")
+dp.plotify(df, plot_types=['histogram', 'box', 'correlation'])
+'''
 
 ## Contributing
 
