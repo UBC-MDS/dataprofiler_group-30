@@ -1,6 +1,6 @@
 import pytest
 import pandas as pd
-from datpro.dataprofiler import summarize_data
+from datpro.datpro import summarize_data
 
 def test_summarize_data_normal():
     """Test summarize_data with a normal DataFrame containing numeric columns."""
