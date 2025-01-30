@@ -1,5 +1,7 @@
 ## Contributors 
 [![Documentation Status](https://readthedocs.org/projects/datpro/badge/?version=latest)](https://datpro.readthedocs.io/en/latest/?badge=latest)
+[![codecov](https://codecov.io/gh/UBC-MDS/dataprofiler_group-30/graph/badge.svg?token=CODECOV_TOKEN)](https://codecov.io/gh/UBC-MDS/dataprofiler_group-30)
+[![ci-cd](https://github.com/UBC-MDS/dataprofiler_group-30/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/UBC-MDS/dataprofiler_group-30/actions/workflows/ci-cd.yml)
 
 Dongchun Chen, Ismail (Husain) Bhinderwala, Jingyuan Wang
 
