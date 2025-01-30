@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "datpro"
-version = "0.1.0"
+version = "0.0.0"
 description = "EDA"
 authors = ["DongchunChen, Ismail (Husain) Bhinderwala, Jingyuan Wang"]
 license = "MIT"
