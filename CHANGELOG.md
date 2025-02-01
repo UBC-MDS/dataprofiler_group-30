@@ -1,6 +1,15 @@
 # CHANGELOG
 
 
+## v1.1.6 (2025-02-01)
+
+### Bug Fixes
+
+- Feedback on 1)typo in exmaple.ipynb 2)documentation of function addressed by Dongchun, also update
+  the README for modified function
+  ([`751911a`](https://github.com/UBC-MDS/dataprofiler_group-30/commit/751911aa36d80083e9434baa1139967cbd2260f9))
+
+
 ## v1.1.5 (2025-02-01)
 
 ### Bug Fixes
