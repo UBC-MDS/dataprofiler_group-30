@@ -1,6 +1,14 @@
 # CHANGELOG
 
 
+## v1.1.4 (2025-02-01)
+
+### Bug Fixes
+
+- Move generate_data.py to scripts/ folder
+  ([`39c9395`](https://github.com/UBC-MDS/dataprofiler_group-30/commit/39c9395b70ee2128d0911f94bc704bbed56a481f))
+
+
 ## v1.1.3 (2025-02-01)
 
 ### Bug Fixes
