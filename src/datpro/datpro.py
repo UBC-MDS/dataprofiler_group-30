@@ -50,67 +50,70 @@ def summarize_data(df):
 
     return summary
 
-	
-def detect_anomalies(df):
-    """Detect anomalies in a dataframe, including missing values, outliers, and duplicates.
-
+def detect_anomalies(df, anomaly_type=None):
+    """
+    Detect anomalies in a dataframe, including missing values, outliers, and duplicates.
+    
     Parameters
     ----------
     df : pandas.DataFrame
         The input dataframe to analyze.
-
+    anomaly_type : str, optional
+        Specify which anomaly to check ('missing_values', 'outliers', or 'duplicates').
+        If None, all anomaly types will be checked.
+    
     Returns
     -------
     dict
-        A dictionary containing the following:
-        - 'missing_values' (dict or str): Columns with missing values, their counts, 
-          and percentages. If no missing values, returns a message.
-        - 'outliers' (dict or str): Numerical columns with outliers, their counts, 
-          and percentages. If no outliers, returns a message.
-        - 'duplicates' (dict or str): Count and percentage of duplicate rows. 
-          If no duplicates, returns a message.
-
-    Examples
-    --------
-    >>> detect_anomalies(df)
-    """
+        A dictionary containing detected anomalies based on the specified anomaly_type.
     
+    Example
+    -------
+    >>> import pandas as pd
+    >>> data = {'A': [1, 2, np.nan, 4], 'B': [100, 200, 300, 400], 'C': [1, 1, 1, 100]}
+    >>> df = pd.DataFrame(data)
+    >>> detect_anomalies(df, anomaly_type='missing_values')
+    {'missing_values': {'A': {'missing_count': 1, 'missing_percentage': 25.0}}}
+    """
     if not isinstance(df, pd.DataFrame):
         raise TypeError("Input must be a pandas DataFrame.")
     
     report = {}
-    
-    missing_values = df.isnull().sum()
     total_rows = len(df)
-    missing_info = {
-        col: {
-            "missing_count": int(missing_values[col]),
-            "missing_percentage": round((missing_values[col] / total_rows) * 100, 2)
-        }
-        for col in df.columns if missing_values[col] > 0
-    }
-    report['missing_values'] = missing_info if missing_info else "No missing values detected."
     
-    outlier_info = {}
-    for col in df.select_dtypes(include=[np.number]).columns:
-        Q1 = df[col].quantile(0.25)
-        Q3 = df[col].quantile(0.75)
-        IQR = Q3 - Q1
-        lower_bound = Q1 - 1.5 * IQR
-        upper_bound = Q3 + 1.5 * IQR
-        outliers = df[(df[col] < lower_bound) | (df[col] > upper_bound)][col]
-        if not outliers.empty:
-            outlier_info[col] = {
-                "outlier_count": len(outliers),
-                "outlier_percentage": round((len(outliers) / total_rows) * 100, 2)
+    if anomaly_type is None or anomaly_type == 'missing_values':
+        missing_values = df.isnull().sum()
+        missing_info = {
+            col: {
+                "missing_count": int(missing_values[col]),
+                "missing_percentage": round((missing_values[col] / total_rows) * 100, 2)
             }
-    report['outliers'] = outlier_info if outlier_info else "No outliers detected."
-
-    duplicate_count = df.duplicated().sum()
-    report['duplicates'] = {
-        "duplicate_count": duplicate_count,
-        "duplicate_percentage": round((duplicate_count / total_rows) * 100, 2)
-    } if duplicate_count > 0 else "No duplicate rows detected."
+            for col in df.columns if missing_values[col] > 0
+        }
+        report['missing_values'] = missing_info if missing_info else "No missing values detected."
+    
+    if anomaly_type is None or anomaly_type == 'outliers':
+        outlier_info = {}
+        for col in df.select_dtypes(include=[np.number]).columns:
+            Q1 = df[col].quantile(0.25)
+            Q3 = df[col].quantile(0.75)
+            IQR = Q3 - Q1
+            lower_bound = Q1 - 1.5 * IQR
+            upper_bound = Q3 + 1.5 * IQR
+            outliers = df[(df[col] < lower_bound) | (df[col] > upper_bound)][col]
+            if not outliers.empty:
+                outlier_info[col] = {
+                    "outlier_count": len(outliers),
+                    "outlier_percentage": round((len(outliers) / total_rows) * 100, 2)
+                }
+        report['outliers'] = outlier_info if outlier_info else "No outliers detected."
+    
+    if anomaly_type is None or anomaly_type == 'duplicates':
+        duplicate_count = df.duplicated().sum()
+        report['duplicates'] = {
+            "duplicate_count": duplicate_count,
+            "duplicate_percentage": round((duplicate_count / total_rows) * 100, 2)
+        } if duplicate_count > 0 else "No duplicate rows detected."
     
     return report
 
