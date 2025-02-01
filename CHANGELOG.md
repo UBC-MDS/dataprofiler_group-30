@@ -1,6 +1,14 @@
 # CHANGELOG
 
 
+## v1.1.3 (2025-02-01)
+
+### Bug Fixes
+
+- Correct author names in pyproject.toml and LICENSE
+  ([`e7f2501`](https://github.com/UBC-MDS/dataprofiler_group-30/commit/e7f25010fda40a52b4f71deb44d5f489223e8691))
+
+
 ## v1.1.2 (2025-01-30)
 
 ### Bug Fixes
