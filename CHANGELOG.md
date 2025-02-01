@@ -1,6 +1,15 @@
 # CHANGELOG
 
 
+## v1.1.5 (2025-02-01)
+
+### Bug Fixes
+
+- Feedback on 1)docstring 2)function that can take additional arguments addressed by Dongchun, tests
+  updated accordingly
+  ([`cf88b8d`](https://github.com/UBC-MDS/dataprofiler_group-30/commit/cf88b8dcc68d3b4d136528d801ccd4a58d294fb7))
+
+
 ## v1.1.4 (2025-02-01)
 
 ### Bug Fixes
