@@ -121,33 +121,49 @@ def test_plotify_missing_columns():
     assert 'scatter_age_income' in result
 
 def test_plot_saving():
-    # Create a temporary directory for saving plots
+    """
+    Test that plotify saves the plot in an existing directory
+    """
     save_path = "test_plots"
     if os.path.exists(save_path):
         shutil.rmtree(save_path)
     os.makedirs(save_path)
-    
-    # Create a sample DataFrame
+
     df = pd.DataFrame({
         'Age': [25, 30, 35, 40],
         'Income': [50000, 60000, 70000, 80000],
         'Gender': ['Male', 'Female', 'Male', 'Female'],
         'Region': ['North', 'South', 'East', 'West']
     })
-    
-    # Call plotify with saving enabled
+
     _ = plotify(df, save=True, save_path=save_path, file_prefix="test")
-    
-    # Check if directory exists
+
     assert os.path.exists(save_path), "Save directory was not created."
-    
-    # Check if at least one plot was saved
+
     saved_files = os.listdir(save_path)
     assert len(saved_files) > 0, "No plots were saved."
-    
-    # Check if expected file formats are correct (HTML files)
+
     for file in saved_files:
         assert file.endswith(".html"), f"Unexpected file format: {file}"
-    
-    # Cleanup
+
     shutil.rmtree(save_path)
+
+def test_plotify_creates_save_directory():
+    """"
+    Test that plotify saves the plot even if the specified directory does not exist
+    """
+    test_save_path = "test_plots"
+    if os.path.exists(test_save_path):
+        shutil.rmtree(test_save_path)
+    
+    df = pd.DataFrame({
+        'A': [1, 2, 3, 4, 5],
+        'B': ['x', 'y', 'x', 'y', 'x'],
+        'C': [10.5, 20.3, 15.2, 30.1, 25.7]
+    })
+    
+    plotify(df, save=True, save_path=test_save_path)
+    
+    assert os.path.exists(test_save_path), "Save directory was not created."
+    
+    shutil.rmtree(test_save_path)
