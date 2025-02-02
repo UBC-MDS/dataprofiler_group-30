@@ -1,6 +1,8 @@
 from datpro.datpro import plotify
 import pytest
 import pandas as pd 
+import shutil
+import os
 
 @pytest.fixture
 def valid_df():
@@ -117,3 +119,35 @@ def test_plotify_missing_columns():
     })
     result = plotify(df, plot_types=['scatter'])
     assert 'scatter_age_income' in result
+
+def test_plot_saving():
+    # Create a temporary directory for saving plots
+    save_path = "test_plots"
+    if os.path.exists(save_path):
+        shutil.rmtree(save_path)
+    os.makedirs(save_path)
+    
+    # Create a sample DataFrame
+    df = pd.DataFrame({
+        'Age': [25, 30, 35, 40],
+        'Income': [50000, 60000, 70000, 80000],
+        'Gender': ['Male', 'Female', 'Male', 'Female'],
+        'Region': ['North', 'South', 'East', 'West']
+    })
+    
+    # Call plotify with saving enabled
+    _ = plotify(df, save=True, save_path=save_path, file_prefix="test")
+    
+    # Check if directory exists
+    assert os.path.exists(save_path), "Save directory was not created."
+    
+    # Check if at least one plot was saved
+    saved_files = os.listdir(save_path)
+    assert len(saved_files) > 0, "No plots were saved."
+    
+    # Check if expected file formats are correct (HTML files)
+    for file in saved_files:
+        assert file.endswith(".html"), f"Unexpected file format: {file}"
+    
+    # Cleanup
+    shutil.rmtree(save_path)
