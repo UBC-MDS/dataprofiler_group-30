@@ -3,7 +3,7 @@ import numpy as np
 import altair as alt
 from itertools import combinations
 
-def summarize_data(df):
+def summarize_data(df: pd.DataFrame) -> pd.DataFrame:
     """
     Summarizes numeric columns in a given DataFrame by calculating key statistical metrics.
 
@@ -50,7 +50,7 @@ def summarize_data(df):
 
     return summary
 
-def detect_anomalies(df, anomaly_type=None):
+def detect_anomalies(df: pd.DataFrame, anomaly_type: Optional[str] = None) -> Dict[str, Union[Dict[str, Dict[str, Union[int, float]]], str]]:
     """
     Detect anomalies in a dataframe, including missing values, outliers, and duplicates.
     
@@ -117,7 +117,7 @@ def detect_anomalies(df, anomaly_type=None):
     
     return report
 
-def plotify(df, plot_types=None):
+def plotify(df: pd.DataFrame, plot_types: Optional[List[str]] = None) -> None:
     """
     Visualize a DataFrame by generating specified plots based on column datatypes.
 
