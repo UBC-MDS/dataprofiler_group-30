@@ -66,6 +66,13 @@ dp.plotify(df, plot_types=['histogram', 'box', 'correlation'])
 ```
 And just like that, you get a clear, structured summary, an anomaly report, and meaningful visualizations without spending hours on manual data exploration.
 
+## Run the tests
+
+Run the following command in terminal to execute the tests:
+```bash
+$ pytest tests/
+```
+
 ## 🤝 Want to Contribute?
 
 We’d love your help in improving datpro! If you have ideas, bug fixes, or feature suggestions, check out our contribution guidelines.
