@@ -25,7 +25,19 @@ def summarize_data(df: pd.DataFrame) -> pd.DataFrame:
 
     Example
     -------
+    >>> import pandas as pd
+    >>> import numpy as np
+    >>> data = {
+    ...     "A": [1, 2, np.nan, 4],
+    ...     "B": [100, 200, 300, 400],
+    ...     "C": [1, 1, 1, 100]
+    ... }
+    >>> df = pd.DataFrame(data)
     >>> summarize_data(df)
+         min   25%   50%   75%    max
+    A    1.0   1.5   2.0   3.0    4.0
+    B  100.0  175.0  250.0  325.0  400.0
+    C    1.0   1.0   1.0   50.5  100.0
     """
 
 	# Check if input is a DataFrame
