@@ -1,6 +1,18 @@
 # CHANGELOG
 
 
+## v1.1.7 (2025-02-03)
+
+### Bug Fixes
+
+- Feedback addressed by review from Celine, add a section in README on how to run test
+  ([`58a328a`](https://github.com/UBC-MDS/dataprofiler_group-30/commit/58a328a31501c3042b930574889534367c5f66dd))
+
+- Feedback addressed by review from Milestone2, add example in docstring of summarize_data() to to
+  exemplify usage
+  ([`d5ac702`](https://github.com/UBC-MDS/dataprofiler_group-30/commit/d5ac702a2c5805035fd572a49e0d2834b0cf5906))
+
+
 ## v1.1.6 (2025-02-01)
 
 ### Bug Fixes
